@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Trail.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 516, 296 )
+
+[node name="Trail" parent="Player" instance=ExtResource( 2 )]
+show_behind_parent = true
+width = 13.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.2, 0.109804, 0.807843, 1 )
