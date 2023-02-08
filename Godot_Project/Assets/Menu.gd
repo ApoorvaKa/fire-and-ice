@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 signal toggle_trail
+signal toggle_squash
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,3 +20,6 @@ func _ready():
 
 func _on_Trail_toggled(button_pressed):
 	emit_signal("toggle_trail")
+
+func _on_Squash_toggled(button_pressed):
+	emit_signal("toggle_squash")

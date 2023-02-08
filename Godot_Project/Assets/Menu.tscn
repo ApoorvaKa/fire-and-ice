@@ -32,7 +32,7 @@ margin_bottom = -219.0
 custom_fonts/font = SubResource( 2 )
 text = "Player Trail"
 
-[node name="Elem2" type="CheckBox" parent="."]
+[node name="Squash" type="CheckBox" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 7.0
@@ -40,7 +40,7 @@ margin_top = -211.0
 margin_right = 128.0
 margin_bottom = -183.0
 custom_fonts/font = SubResource( 2 )
-text = "Elem 2"
+text = "Squash & Stretch"
 
 [node name="Elem3" type="CheckBox" parent="."]
 anchor_top = 0.5
@@ -63,3 +63,4 @@ custom_fonts/font = SubResource( 2 )
 text = "Elem 4"
 
 [connection signal="toggled" from="Trail" to="." method="_on_Trail_toggled"]
+[connection signal="toggled" from="Squash" to="." method="_on_Squash_toggled"]

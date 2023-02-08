@@ -3,13 +3,16 @@ extends KinematicBody2D
 var speed: float = 200
 var acceleration: float = 2000 # this is 10 times the speed
 var friction: float = acceleration / speed
+var squash: bool = false
 
 var velocity: Vector2 = Vector2()
 
 func _process(delta: float) -> void:
 	apply_traction(delta)
 	apply_friction(delta)
-
+	if squash:
+		resize(delta)
+		
 func _physics_process(delt: float) -> void:
 	velocity = move_and_slide(velocity)
 	
@@ -31,3 +34,7 @@ func apply_traction(delta: float) -> void:
 	
 func apply_friction(delta: float) -> void:
 	velocity -= velocity * friction * delta
+
+func resize(delta: float) -> void:
+	rotation = velocity.angle()
+	scale.x = velocity.length()/1000 + 1
