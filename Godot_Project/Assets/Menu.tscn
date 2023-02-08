@@ -22,16 +22,6 @@ margin_bottom = 68.0
 custom_fonts/font = SubResource( 1 )
 text = "Elements"
 
-[node name="Trail" type="CheckBox" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 7.0
-margin_top = -243.0
-margin_right = 31.0
-margin_bottom = -219.0
-custom_fonts/font = SubResource( 2 )
-text = "Player Trail"
-
 [node name="Squash" type="CheckBox" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -56,13 +46,29 @@ text = "Smooth Motion"
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 7.0
-margin_top = -149.0
+margin_top = -163.0
 margin_right = 128.0
 margin_bottom = -121.0
 custom_fonts/font = SubResource( 2 )
 text = "Dangerous Fire"
 
-[connection signal="toggled" from="Trail" to="." method="_on_Trail_toggled"]
+[node name="Dash" type="CheckBox" parent="."]
+margin_left = 7.0
+margin_top = 172.0
+margin_right = 160.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 153, 28 )
+text = "Dash (Press Z)"
+
+[node name="Smash Obstacles" type="CheckBox" parent="."]
+margin_left = 7.0
+margin_top = 199.0
+margin_right = 160.0
+margin_bottom = 227.0
+text = "Smash Obstacles"
+
 [connection signal="toggled" from="Squash" to="." method="_on_Squash_toggled"]
 [connection signal="toggled" from="Smooth Motion" to="." method="_on_Smooth_Motion_toggled"]
 [connection signal="toggled" from="Dangerous Fire" to="." method="_on_Dangerous_Fire_toggled"]
+[connection signal="toggled" from="Dash" to="." method="_on_Dash_toggled"]
+[connection signal="toggled" from="Smash Obstacles" to="." method="_on_Smash_Obstacles_toggled"]

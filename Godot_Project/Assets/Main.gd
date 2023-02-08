@@ -41,5 +41,17 @@ func warmth() -> void:
 			$Camera.position.x = 512
 			$Camera.position.y = 300
 
+func _on_Menu_toggle_dash():
+	var curr = $Player.dash_status
+	$Player.dash_status = !curr
 
 
+func _on_Menu_toggle_smash_obstacles():
+	var curr = $Player.can_smash
+	$Player.can_smash = !curr
+
+
+func _on_Obstacle_Timer_timeout():
+	get_node("/root/Main/Camera/").position.x = 513
+	get_node("/root/Main/Camera/").position.y = 300
+	
