@@ -76,5 +76,6 @@ color = Color( 0.968627, 0.309804, 0.0823529, 0.0235294 )
 position = Vector2( 512, 300 )
 current = true
 
+[connection signal="toggle_smooth_motion" from="Menu" to="." method="_on_Menu_toggle_smooth_motion"]
 [connection signal="toggle_squash" from="Menu" to="." method="_on_Menu_toggle_squash"]
 [connection signal="toggle_trail" from="Menu" to="." method="_on_Menu_toggle_trail"]

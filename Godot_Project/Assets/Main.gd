@@ -17,11 +17,20 @@ func _on_Menu_toggle_squash():
 	var curr = $Player.squash
 	$Player.squash = !curr
 
+func _on_Menu_toggle_smooth_motion():
+	var curr = $Player.smooth_motion
+	$Player.smooth_motion = !curr
+	print($Player.smooth_motion)
+	
 func warmth() -> void:
 	if $Player.position.distance_to($Fire.position) < 140:
-		var heat: float = (120 - ($Player.position - $Fire.position).length())/120
-		if heat > 0.7:
-			heat = 0.7
+		var reverse_dist: float = (120 - $Player.position.distance_to($Fire.position))
+		var heat: float = reverse_dist/120
+		if heat > 0.3:
+			heat = 0.3
 		$CanvasLayer/ColorRect.color.a = heat
 		if $Player.position.distance_to($Fire.position) < 120:
-			Camera2D
+			$Camera.position = Vector2(512 + rand_range(-0.2 * reverse_dist, 0.2 * reverse_dist), 300 + rand_range(-0.2 * reverse_dist, 0.2 * reverse_dist))
+		else:
+			$Camera.position.x = 512
+			$Camera.position.y = 300
