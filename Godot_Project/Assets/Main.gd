@@ -1,5 +1,7 @@
 extends Node2D
 
+var dangerous_fire: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -7,7 +9,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	warmth()
+	if dangerous_fire:
+		warmth()
+
+func _on_Menu_toggle_dangerous_fire():
+	dangerous_fire = !dangerous_fire
 
 func _on_Menu_toggle_trail():
 	var curr = $Player/Trail.visible
@@ -34,3 +40,6 @@ func warmth() -> void:
 		else:
 			$Camera.position.x = 512
 			$Camera.position.y = 300
+
+
+
