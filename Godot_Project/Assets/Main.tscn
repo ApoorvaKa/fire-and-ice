@@ -33,10 +33,6 @@ width = 13.0
 width_curve = SubResource( 1 )
 default_color = Color( 0.2, 0.109804, 0.807843, 1 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -4, 3.84256 )
-scale = Vector2( 1, 0.960644 )
-
 [node name="Menu" parent="." instance=ExtResource( 3 )]
 layer = 10
 
@@ -75,6 +71,10 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 25.88, 16.56 )
 color = Color( 0.968627, 0.309804, 0.0823529, 0.0235294 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )
+current = true
 
 [connection signal="toggle_squash" from="Menu" to="." method="_on_Menu_toggle_squash"]
 [connection signal="toggle_trail" from="Menu" to="." method="_on_Menu_toggle_trail"]

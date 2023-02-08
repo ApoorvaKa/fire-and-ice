@@ -18,7 +18,6 @@ func _on_Menu_toggle_squash():
 	$Player.squash = !curr
 
 func warmth() -> void:
-	print($Player.position.distance_to($Fire.position))
 	if $Player.position.distance_to($Fire.position) < 140:
 		var heat: float = (120 - ($Player.position - $Fire.position).length())/120
 		if heat > 0.7:
